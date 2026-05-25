@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>br.com.mgr</groupId>
+    <artifactId>SmartPricing</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Importante: Define que estamos usando o Java 17 ou superior -->
+        <maven.compiler.release>17</maven.compiler.release>
+    </properties>
+
+    <!-- AS DEPENDÊNCIAS PRECISAM ESTAR EXATAMENTE AQUI DENTRO -->
+    <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>17.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>17.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.thoughtworks.binding</groupId>
+            <artifactId>fxml_2.10</artifactId>
+            <version>11.9.0+56-3af5a32a</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+    <plugins>
+        <!-- Plugin de Compilação Padrão -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version>
+            <configuration>
+                <release>17</release>
+            </configuration>
+        </plugin>
+
+        <!-- O PLUGIN CORRETOR: Ele gerencia a inicialização do JavaFX -->
+        <plugin>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-maven-plugin</artifactId>
+            <version>0.0.8</version>
+            <configuration>
+                <!-- Indica a classe que contém o método MAIN do JavaFX -->
+                <mainClass>br.com.mgr.precificacao.MainFX</mainClass>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+</project>

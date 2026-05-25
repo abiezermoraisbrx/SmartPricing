@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" alignment="TOP_CENTER" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="br.com.mgr.precificacao.controller.PrecificacaoController"
+      style="-fx-background-color: #f4f6f9; -fx-font-family: 'Segoe UI', Arial;">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Cabeçalho -->
+    <HBox style="-fx-background-color: #1e293b; -fx-background-radius: 5;" alignment="CENTER" minHeight="60">
+        <Label text="MGR CORPORATIVO - PRECIFICAÇÃO INDUSTRIAL" style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <GridPane hgap="15" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50"/>
+            <ColumnConstraints percentWidth="50"/>
+        </columnConstraints>
+
+        <!-- Coluna Esquerda: Dados do Produto -->
+        <VBox spacing="8" GridPane.columnIndex="0" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5; -fx-border-color: #e2e8f0;">
+    <Label text="Dados do Produto" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #334155;"/>
+    
+    <Label text="Nome do Item:"/>
+    <TextField fx:id="txtNome" promptText="Ex: Pão Francês KG" onAction="#handleMudarFoco"/>
+    
+    <Label text="Custo de Matéria-Prima / Compra (R$):"/>
+    <TextField fx:id="txtCustoCompra" promptText="0.00" onAction="#handleMudarFoco"/>
+    
+    <Label text="Rateio de Custo Fixo Unitário (R$):"/>
+    <TextField fx:id="txtCustoFixo" promptText="0.00" onAction="#handleMudarFoco"/>
+    
+    <Label text="Insumo de Embalagem (R$):"/>
+    <TextField fx:id="txtEmbalagem" promptText="0.00" onAction="#handleMudarFoco"/>
+</VBox>
+
+<VBox spacing="8" GridPane.columnIndex="1" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5; -fx-border-color: #e2e8f0;">
+    <Label text="Taxas Operacionais e Alvo" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #334155;"/>
+    
+    <Label text="Simples Nacional (%):"/>
+    <TextField fx:id="txtSimples" promptText="0.00" onAction="#handleMudarFoco"/>
+    
+    <Label text="Comissão de Vendas (%):"/>
+    <TextField fx:id="txtComissao" promptText="0.00" onAction="#handleMudarFoco"/>
+    
+    <Label text="Taxa de Cartão / Adquirente (%):"/>
+    <TextField fx:id="txtCartao" promptText="0.00" onAction="#handleMudarFoco"/>
+    
+    <Label text="Margem de Lucro Alvo (%):"/>
+    <TextField fx:id="txtMargem" promptText="0.00" onAction="#handleMudarFoco"/>
+</VBox>
+    </GridPane>
+
+    <!-- Arredondamento e Ação -->
+    <HBox spacing="15" alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5; -fx-border-color: #e2e8f0;">
+        <Label text="Estratégia de Gôndola:" style="-fx-font-weight: bold;"/>
+        <ComboBox fx:id="comboEstrategia" prefWidth="250"/>
+        <Button text="Calcular Preço" onAction="#handleCalcular" style="-fx-background-color: #0284c7; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 20 8 20; -fx-cursor: hand;"/>
+    </HBox>
+
+    <!-- Painel de Resultados Rápidos -->
+    <HBox spacing="20" alignment="CENTER" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5; -fx-border-color: #e2e8f0;">
+        
+        <VBox spacing="15" alignment="CENTER_LEFT" prefWidth="300">
+            <VBox alignment="CENTER_LEFT" style="-fx-background-color: #e0f2fe; -fx-padding: 10; -fx-background-radius: 5;">
+                <Label text="PREÇO SUGERIDO (PDV)" style="-fx-font-size: 11px; -fx-text-fill: #0369a1; -fx-font-weight: bold;"/>
+                <Label fx:id="lblPrecoPraticado" text="R$ 0,00" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0369a1;"/>
+            </VBox>
+            
+            <VBox alignment="CENTER_LEFT" style="-fx-background-color: #dcfce7; -fx-padding: 10; -fx-background-radius: 5;">
+                <Label text="LUCRO LÍQUIDO REAL" style="-fx-font-size: 11px; -fx-text-fill: #15803d; -fx-font-weight: bold;"/>
+                <Label fx:id="lblLucroReal" text="R$ 0,00" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #15803d;"/>
+            </VBox>
+            
+            <VBox alignment="CENTER_LEFT" style="-fx-background-color: #fef3c7; -fx-padding: 10; -fx-background-radius: 5;">
+                <Label text="MARGEM REAL OBTIDA" style="-fx-font-size: 11px; -fx-text-fill: #b45309; -fx-font-weight: bold;"/>
+                <Label fx:id="lblMargemReal" text="0.0%" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #b45309;"/>
+            </VBox>
+        </VBox>
+        
+        <Separator orientation="VERTICAL"/>
+
+        <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+            <Label text="COMPOSIÇÃO DO PREÇO DE VENDA" style="-fx-font-weight: bold; -fx-text-fill: #475569; -fx-font-size: 12px;"/>
+            <javafx.scene.chart.PieChart fx:id="graficoPizza" prefWidth="400" prefHeight="250" legendVisible="true"/>
+        </VBox>
+        
+    </HBox>
+</VBox>

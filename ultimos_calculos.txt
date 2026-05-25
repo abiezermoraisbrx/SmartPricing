@@ -1,0 +1,29 @@
+=========================================================
+        MGR SMARTPRICING - ÚLTIMOS 5 CÁLCULOS DA SESSÃO
+        Gerado em: 25/05/2026 09:09:11
+=========================================================
+
+1. PRODUTO: PAO FRANCÊS
+   [-] Custo Direto (MP + Fixo + Emb): R$ 8,56
+   [+] Preço de Venda Sugerido (PDV): R$ 18,99
+   [=] Lucro Líquido Real por Unidade: R$ 8,81
+   [=] Margem Real Obtida no Caixa:   46,37%
+---------------------------------------------------------
+2. PRODUTO: PAO FRANCÊS
+   [-] Custo Direto (MP + Fixo + Emb): R$ 8,56
+   [+] Preço de Venda Sugerido (PDV): R$ 19,00
+   [=] Lucro Líquido Real por Unidade: R$ 8,82
+   [=] Margem Real Obtida no Caixa:   46,40%
+---------------------------------------------------------
+3. PRODUTO: PAO FRANCÊS
+   [-] Custo Direto (MP + Fixo + Emb): R$ 8,56
+   [+] Preço de Venda Sugerido (PDV): R$ 18,90
+   [=] Lucro Líquido Real por Unidade: R$ 8,72
+   [=] Margem Real Obtida no Caixa:   46,16%
+---------------------------------------------------------
+4. PRODUTO: PAO FRANCÊS
+   [-] Custo Direto (MP + Fixo + Emb): R$ 8,56
+   [+] Preço de Venda Sugerido (PDV): R$ 18,43
+   [=] Lucro Líquido Real por Unidade: R$ 8,29
+   [=] Margem Real Obtida no Caixa:   45,00%
+---------------------------------------------------------
